@@ -1,0 +1,7 @@
+The projects purpose is a a sized down-model of R2D2 with the solidworks model & pngs present in the other file. This bot is going to be remote controlled through a local run website through the ESP32, furthermore on this very same website, there is going to be a live-feed of the video.
+Microcontrollers being used:
+-ESP32
+-ESP32 Cam
+
+2x 12v DC motor
+Buck Convertor

@@ -1,0 +1,148 @@
+================================================================================
+R2D2 CAM - QUICK REFERENCE CARD
+================================================================================
+
+🔌 CONNECTION:
+---------------
+WiFi Network: R2D2-CAM
+Password: 12345678
+URL: http://192.168.4.1
+
+================================================================================
+🎮 MAIN INTERFACE (http://192.168.4.1)
+================================================================================
+
+LIVE STREAM FEATURES:
+  📸 Capture Photo     - Save current frame to gallery
+  🖼 Photo Gallery     - View all captured photos
+  ⚠ Motion Detection  - Real-time motion monitoring
+
+STATUS INDICATORS:
+  📺 FPS             - Current frame rate (~30 fps)
+  📊 Photos          - Total photos saved
+  🔴 Status          - LIVE indicator
+
+MOTION PANEL:
+  🔵 Scanning...      - No motion detected
+  🔴 MOTION DETECTED  - Movement detected!
+  Motion Level        - Percentage (0-100%)
+
+================================================================================
+📸 GALLERY INTERFACE (http://192.168.4.1/gallery)
+================================================================================
+
+PHOTO ACTIONS:
+  ⬇️ Download   - Save photo to computer
+  ✕ Delete     - Remove photo from ESP32
+
+AUTO-REFRESH: Every 5 seconds
+
+================================================================================
+🔧 QUICK CUSTOMIZATION
+================================================================================
+
+MOTION SENSITIVITY (Line 25):
+  10% = Very sensitive
+  15% = Default (medium)
+  20% = Less sensitive
+  25% = Least sensitive
+
+WiFi NAME (Line 16):
+  const char* ap_ssid = "R2D2-CAM";
+
+WiFi PASSWORD (Line 17):
+  const char* ap_password = "12345678";
+
+FRAME RATE (JavaScript):
+  30ms  = ~33 fps (smoothest)
+  50ms  = ~20 fps (balanced)
+  100ms = ~10 fps (saves power)
+
+================================================================================
+⚡ PERFORMANCE SETTINGS
+================================================================================
+
+SMOOTH STREAM:
+  FRAMESIZE: QVGA (320x240)
+  QUALITY: 15
+  FPS: 30
+
+LOW LATENCY:
+  FRAMESIZE: QVGA (320x240)
+  QUALITY: 20
+  FPS: 20
+
+HIGH QUALITY:
+  FRAMESIZE: SVGA (800x600)
+  QUALITY: 10
+  FPS: 10-15
+
+POWER SAVING:
+  FRAMESIZE: QVGA (320x240)
+  QUALITY: 25
+  FPS: 10
+
+================================================================================
+📊 STORAGE INFO
+================================================================================
+
+FILE SYSTEM: SPIFFS
+CAPACITY: ~3MB
+FORMAT: JPEG
+NAMING: photo_001.jpg, photo_002.jpg, etc.
+MAX PHOTOS: ~75-150 photos
+SIZE PER PHOTO: 20-40 KB
+
+================================================================================
+🔗 USEFUL URLS
+================================================================================
+
+Main Page:        http://192.168.4.1/
+Gallery:          http://192.168.4.1/gallery
+Photo List:       http://192.168.4.1/list
+Motion Status:    http://192.168.4.1/motion
+Live Stream:      http://192.168.4.1/stream
+
+Download Photo:   http://192.168.4.1/download?file=/photo_XXX.jpg
+Delete Photo:     http://192.168.4.1/delete?file=/photo_XXX.jpg
+
+================================================================================
+🐛 COMMON ISSUES
+================================================================================
+
+❌ Photos not saving
+   → Check Serial Monitor for SPIFFS errors
+   → May need to reformat SPIFFS
+
+❌ Motion always triggering
+   → Increase motionThreshold to 20-25%
+
+❌ Not detecting motion
+   → Decrease motionThreshold to 10-12%
+
+❌ Can't connect WiFi
+   → Wait 10 seconds after power on
+   → Check power supply (5V 2A)
+
+❌ Stream is laggy
+   → Reduce frame rate
+   → Lower JPEG quality
+   → Check WiFi signal
+
+================================================================================
+🎨 HOLOGRAPHIC EFFECTS
+================================================================================
+
+SCANLINES:        Horizontal CRT lines
+VIGNETTE:         Darker edges
+FLICKER:          Realistic hologram flicker
+COLOR TINT:       Blue/cyan holographic hue
+GLOW:             Glowing borders
+CROSSHAIR:        Center targeting reticle
+TIMESTAMP:        Imperial Date format
+
+================================================================================
+
+Keep this card handy while using your R2D2 camera system!
+
+For detailed instructions, see: R2D2_FEATURES_GUIDE.txt
