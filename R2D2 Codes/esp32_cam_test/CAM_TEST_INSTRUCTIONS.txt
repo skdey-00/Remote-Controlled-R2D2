@@ -1,0 +1,72 @@
+==========================================
+ESP32 CAM TEST INSTRUCTIONS
+==========================================
+
+HARDWARE SETUP:
+1. Connect ESP32 CAM to your computer using USB-to-Serial adapter
+   - TX → RX
+   - RX → TX
+   - GND → GND
+   - 5V → VCC
+
+2. IMPORTANT: Use a 5V 2A power supply for reliable camera operation
+   - USB port power may not be sufficient
+
+SOFTWARE SETUP:
+1. Install Arduino IDE (if not already installed)
+2. Add ESP32 board support:
+   - File → Preferences → Additional Boards Manager URLs
+   - Add: https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json
+   - Tools → Board → Boards Manager → Search "ESP32" → Install
+
+3. Select Board:
+   - Tools → Board → ESP32 Arduino → AI Thinker ESP32-CAM
+
+4. Upload Settings:
+   - Tools → Upload Mode: "UART0 / Hardware CK"
+   - Tools → Partition Scheme: "Huge APP (3MB No OTA/1MB SPIFFS)"
+   - Tools → CPU Frequency: "240MHz (WiFi/BT)"
+
+UPLOADING CODE:
+1. Connect GPIO0 to GND (put in upload mode)
+2. Press EN/RESET button
+3. Upload the sketch (esp32_cam_test.ino)
+4. After upload, disconnect GPIO0 from GND
+5. Press EN/RESET button again
+
+TESTING:
+1. Open Serial Monitor (Tools → Serial Monitor)
+2. Set baud rate to 115200
+3. Press EN/RESET button
+4. Watch for output messages
+
+EXPECTED OUTPUT:
+✓ "Camera initialized successfully!"
+✓ "Camera sensor PID: 0x36"
+✓ "OV3660 camera detected!"
+✓ "Image captured successfully!"
+✓ Image size and dimensions displayed
+
+TROUBLESHOOTING:
+
+Issue: "Camera init failed"
+- Check power supply (use 5V 2A)
+- Verify all connections are secure
+- Try lowering XCLK frequency in code (20000000 → 10000000)
+
+Issue: "Image capture failed"
+- Insufficient power - use external power supply
+- Check SD card (if using one)
+
+Issue: "Wrong sensor PID"
+- Camera module may be different (OV2640 is also common)
+- Code will still work with most ESP32 CAM modules
+
+Issue: Cannot upload
+- Ensure GPIO0 is connected to GND during upload
+- Try different USB port or cable
+- Check COM port selection
+
+SUCCESS INDICATORS:
+If you see successful initialization and image capture messages,
+your ESP32 CAM is working correctly!
