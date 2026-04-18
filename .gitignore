@@ -1,1 +1,4 @@
 .claude/
+nul
+*.pkl
+*.xml

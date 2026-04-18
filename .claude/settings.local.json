@@ -8,7 +8,16 @@
       "Bash(git commit:*)",
       "Bash(git push:*)",
       "Bash(git rm:*)",
-      "Bash(git checkout:*)"
+      "Bash(git checkout:*)",
+      "Bash(git pull:*)",
+      "Bash(pip install:*)",
+      "Bash(python -m pip install:*)",
+      "Bash(\"C:/Users/sanme/AppData/Local/Microsoft/WindowsApps/python.exe\":*)",
+      "Bash(py -m pip install:*)",
+      "Bash(py:*)",
+      "Bash(findstr:*)",
+      "Bash(git config:*)",
+      "Bash(cmd /c \"del nul 2>nul || rm -f nul\")"
     ]
   }
 }
